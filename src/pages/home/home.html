@@ -3,16 +3,21 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>{{Title}}</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <div *ngFor="let site_data of arr_site" text-wrap>
+      <ion-card (click)="site_problem(site_data.site_id)">
+          <ion-card-content>
+              <ion-item>
+                  <h3>{{site_data.site_name}}</h3>
+                </ion-item>
+          </ion-card-content>
+        
+        </ion-card>
+  </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
